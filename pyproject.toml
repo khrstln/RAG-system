@@ -1,0 +1,52 @@
+[tool.poetry]
+name = "rag-system"
+version = "0.1.0"
+description = ""
+authors = ["khrstln <Khrstln@yandex.ru>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+qdrant-client = "^1.14.3"
+python-dotenv = "^1.1.1"
+langchain = "^0.3.26"
+langchain-community = "^0.3.27"
+langchain-qdrant = "^0.2.0"
+langchain-huggingface = "^0.3.0"
+openai = "^1.97.0"
+langchain-openai = "^0.3.28"
+accelerate = "^1.9.0"
+uvicorn = "^0.35.0"
+fastapi = "^0.116.1"
+pydantic-settings = "^2.10.1"
+streamlit = "^1.47.0"
+pydantic = {extras = ["mypy"], version = "^2.11.7"}
+sentence-transformers = "^5.0.0"
+
+[tool.poetry.group.dev.dependencies]
+types-requests = "^2.32.4.20250611"
+isort = "^6.0.1"
+ipykernel = "^6.30.0"
+ipywidgets = "^8.1.7"
+bert-score = "^0.3.13"
+pdfplumber = "^0.11.7"
+pdf2image = "^1.17.0"
+pytesseract = "^0.3.13"
+sentence-transformers = "^5.0.0"
+mypy = "^1.17.0"
+flake8 = "^7.3.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.mypy]
+plugins = ["pydantic.mypy"]
+
+[tool.flake8]
+ignore = ['E231', 'E241', 'W503']
+per-file-ignores = [
+    '__init__.py:F401',
+]
+max-line-length = 120
+count = true
